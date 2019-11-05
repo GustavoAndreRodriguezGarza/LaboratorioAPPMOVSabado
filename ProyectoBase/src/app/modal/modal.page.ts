@@ -19,15 +19,17 @@ export class ModalPage implements OnInit {
   ngOnInit() {
   }
 
-  Nombre: string = "";
+  Nombre: string;
   Cantidad: number;
 
 
-  subirCuenta() {
-    this.modalCtrl.dismiss(this.Cantidad, this.Nombre);
+  async subirCuenta() {
+    var data: any = [];
+    data ={Cantidad: this.Cantidad, Nombre: this.Nombre};
+    this.modalCtrl.dismiss(data);
   }
 
-  salirModal() {
+  async salirModal() {
     this.modalCtrl.dismiss();
   }
 }

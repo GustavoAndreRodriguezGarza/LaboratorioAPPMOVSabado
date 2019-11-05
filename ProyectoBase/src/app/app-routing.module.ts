@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { RegistrarPage } from './auth/registrar/registrar.page';
 import { LoginPage } from './auth/login/login.page';
+import { ModalPageModule } from '../app/modal/modal.module';
 
 const routes: Routes = [
   {
@@ -11,14 +12,12 @@ const routes: Routes = [
   { path: 'registro', component: RegistrarPage },
   { path: 'registrar', component: RegistrarPage  },
   { path: 'login', component: LoginPage },
-  { path: 'home', loadChildren: './home/home.module#HomePageModule' },
-  { path: 'cuenta', loadChildren: './cuenta/cuenta.module#CuentaPageModule' },
-  { path: 'modal', loadChildren: './modal/modal.module#ModalPageModule' }
+  { path: 'home', loadChildren: './home/home.module#HomePageModule'}
 
 ];
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    ModalPageModule, RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
   exports: [RouterModule]
 })

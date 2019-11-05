@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { ModalPage } from '../modal/modal.page';
+import { OverlayEventDetail } from '@ionic/core';
 
 @Component({
   selector: 'app-cuenta',
@@ -10,6 +11,8 @@ import { ModalPage } from '../modal/modal.page';
 export class CuentaPage implements OnInit {
 
   public cuentas;
+  Cantidad: number;
+  Nombre: String;
 
   constructor(private modalCtrl: ModalController) { }
 
@@ -24,21 +27,26 @@ export class CuentaPage implements OnInit {
 
   }
 
-
-
-  agregarArregloCuenta(cantidad, nombre) {
-    this.cuentas.push({ cantidad, nombre });
+  agregarArregloCuenta(Cantidad, Nombre) {
+    this.cuentas.push(Cantidad, Nombre);
   }
 
   async abrirModal() {
 
     const modal = await this.modalCtrl.create({
-      component: ModalPage
+      component: ModalPage,
+      componentProps: {Cantidad: null, Nombre: null},
+    });
 
+    modal.onDidDismiss().then((data) => {
+      if(data['data'] != null){
+        this.cuentas.push(data['data']);
+      }
+      
     });
 
 
-    await modal.present();
+    return await modal.present();
   }
 
 
