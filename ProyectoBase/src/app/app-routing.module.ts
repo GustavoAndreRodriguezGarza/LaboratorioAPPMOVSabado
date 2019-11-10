@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { RegistrarPage } from './auth/registrar/registrar.page';
 import { LoginPage } from './auth/login/login.page';
-import { ModalPageModule } from '../app/modal/modal.module';
 
 const routes: Routes = [
   {
@@ -17,7 +16,7 @@ const routes: Routes = [
 ];
 @NgModule({
   imports: [
-    ModalPageModule, RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
   exports: [RouterModule]
 })
