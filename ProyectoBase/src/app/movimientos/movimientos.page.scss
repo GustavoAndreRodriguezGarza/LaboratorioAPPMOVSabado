@@ -1,10 +1,3 @@
-ion-title{
-    --color: white;
-    font-family: 'Nunito';
-    font-weight: bold;
-    font-size: 18pt;
-}
-
 ion-list{
     padding-top: 0;
     padding-bottom: 0;
@@ -24,7 +17,7 @@ ion-card{
 
 .cardItems{
     color: #fff;
-    font-family: 'Nunito';
+    --background:  #fff;
 }
 
 ion-fab-button{
@@ -32,17 +25,14 @@ ion-fab-button{
 }
 
 .descripcion{
-    font-family: 'Nunito';
     font-size: 16pt;
 }
 
 .cuenta{
-    font-family: 'Nunito';
     font-size: 12pt;
 }
 
 .etiqueta{
-    font-family: 'Nunito';
     font-size: 14pt;
 }
 
