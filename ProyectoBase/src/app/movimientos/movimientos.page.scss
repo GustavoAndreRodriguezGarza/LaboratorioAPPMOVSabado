@@ -6,8 +6,7 @@ ion-list{
 ion-item{
     --background: #15D0B3;
     --color: #fff;
-    --padding-end: 0px;
-    --inner-padding-end: 0px;
+    --border-color: white;
 }
 
 ion-card{
@@ -19,7 +18,12 @@ ion-card{
     color: #fff;
     --background:  #fff;
 }
-
+ion-button{
+    --background: white;
+    --opacity: 100;	
+    font-weight: 900;
+    color: #15D0B3;
+}
 ion-fab-button{
     --color: white;
 }
