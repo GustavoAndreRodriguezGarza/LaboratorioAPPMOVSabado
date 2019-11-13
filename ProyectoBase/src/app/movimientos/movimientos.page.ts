@@ -55,23 +55,6 @@ export class MovimientosPage implements OnInit {
       }
 
     ];
-    /*this.movimientos = [
-      {
-        descripcion: '7-Eleven',
-        cantidad: '-18',
-        tipo: '2', //1 - Ingreso, 2 - Egreso
-        cuenta: {
-          nombre: 'Crédito Banorte',
-          id: 1
-        },
-        etiqueta: {
-          id: 1,
-          descripcion: 'Comida'
-        },
-        fecha: '2019-11-08'
-      }
-
-    ];*/
   }
 
   async abrirModal() {
@@ -85,7 +68,6 @@ export class MovimientosPage implements OnInit {
       if (data['data'] != null) {
         console.log(data);
         this.movimientos.push(data['data']);
-
       }
 
     });
