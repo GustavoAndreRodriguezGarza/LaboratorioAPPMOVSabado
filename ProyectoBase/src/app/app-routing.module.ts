@@ -9,9 +9,13 @@ const routes: Routes = [
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   { path: 'registro', component: RegistrarPage },
-  { path: 'registrar', component: RegistrarPage  },
+  { path: 'registrar', component: RegistrarPage },
   { path: 'login', component: LoginPage },
-  { path: 'home', loadChildren: './home/home.module#HomePageModule'}
+  { path: 'home', loadChildren: './home/home.module#HomePageModule' },
+  { path: 'cuenta', loadChildren: './cuenta/cuenta.module#CuentaPageModule' },
+  { path: 'movimientos', loadChildren: './movimientos/movimientos.module#MovimientosPageModule' },  { path: 'resumen-chart', loadChildren: './resumen-chart/resumen-chart.module#ResumenChartPageModule' },
+
+
 
 ];
 @NgModule({
@@ -20,4 +24,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

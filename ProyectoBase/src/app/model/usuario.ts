@@ -1,3 +1,5 @@
+import { HttpService } from 'src/app/service/http-service.service';
+
 export class Usuario {
     public static endPoint = '/usuario';
     public nombre: string;
