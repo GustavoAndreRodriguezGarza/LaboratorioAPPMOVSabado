@@ -1,12 +1,9 @@
 ion-title{
     --color: white;
-    font-family: 'Nunito';
-    font-weight: bold;
     font-size: 18pt;
 }
 
 ion-input{
-    font-family: 'Nunito';
     --placeholder-color: white; 
     --placeholder-opacity: 100;
 }
@@ -18,7 +15,10 @@ ion-item{
 }
 
 ion-button{
-    color:white;
+    --background: white;
+    --opacity: 100;	
+    font-weight: 700;
+    color: #15D0B3;
 }
 
 ion-content{
