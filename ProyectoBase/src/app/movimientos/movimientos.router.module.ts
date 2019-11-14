@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TabsPage } from './tabs.page';
-import { CuentaPageModule } from '../cuenta/cuenta.module';
+import { TabsPage } from '../tabs/tabs.page';
 
 const routes: Routes = [
   {
@@ -14,7 +13,7 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () =>
-              import('../cuenta/cuenta.module').then(m => m.CuentaPageModule)
+              import('../tab1/tab1.module').then(m => m.Tab1PageModule)
           }
         ]
       },
@@ -40,11 +39,15 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: 'tabs/cuenta',
-        pathMatch: 'full',
-        component: CuentaPageModule
+        redirectTo: '/tabs/tab1',
+        pathMatch: 'full'
       }
     ]
+  },
+  {
+    path: '',
+    redirectTo: '/tabs/tab1',
+    pathMatch: 'full'
   }
 ];
 

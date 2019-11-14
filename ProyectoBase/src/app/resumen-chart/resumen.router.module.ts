@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TabsPage } from './tabs.page';
-import { CuentaPageModule } from '../cuenta/cuenta.module';
+import { TabsPage } from '../tabs/tabs.page';
 
 const routes: Routes = [
   {
@@ -14,7 +13,7 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: () =>
-              import('../cuenta/cuenta.module').then(m => m.CuentaPageModule)
+            import('../cuenta/cuenta.module').then(m => m.CuentaPageModule)
           }
         ]
       },
@@ -40,11 +39,15 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: 'tabs/cuenta',
-        pathMatch: 'full',
-        component: CuentaPageModule
+        redirectTo: '/tabs/tab1',
+        pathMatch: 'full'
       }
     ]
+  },
+  {
+    path: '',
+    redirectTo: '/resumen-chart/resumen',
+    pathMatch: 'full'
   }
 ];
 
@@ -52,4 +55,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TabsPageRoutingModule { }
+export class ResumenPageRoutingModule { }

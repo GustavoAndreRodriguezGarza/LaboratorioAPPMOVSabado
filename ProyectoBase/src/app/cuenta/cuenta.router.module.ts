@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TabsPage } from './tabs.page';
-import { CuentaPageModule } from '../cuenta/cuenta.module';
+import { CuentaPage } from './cuenta.page';
+import { TabsPage } from '../tabs/tabs.page';
 
 const routes: Routes = [
   {
@@ -40,11 +40,15 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: 'tabs/cuenta',
-        pathMatch: 'full',
-        component: CuentaPageModule
+        redirectTo: '/tabs/tab1',
+        pathMatch: 'full'
       }
     ]
+  },
+  {
+    path: '',
+    redirectTo: '/tabs/tab1',
+    pathMatch: 'full'
   }
 ];
 
@@ -52,4 +56,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TabsPageRoutingModule { }
+export class CuentaPageRoutingModule { }
